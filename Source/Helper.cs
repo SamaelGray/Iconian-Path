@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
-using VFECore;
 using static UnityEngine.GraphicsBuffer;
 
 namespace IconianPsycasts
 {
     public static class Helper
     {
+        public const int TurretHealthTimeRatio = 90;
         public const float CommonCutoff = 2f;
         public const float RareCutoff = 3f;
         public const float EpicCutoff = 5f;
@@ -209,7 +209,7 @@ namespace IconianPsycasts
             }
 
         }
-        public static BackstoryDef GetBackstoryDef(VFECore.Abilities.AbilityDef def, Rarity rarity)
+        public static BackstoryDef GetBackstoryDef(VEF.Abilities.AbilityDef def, Rarity rarity)
         {
             if (def == null)
             {
@@ -240,7 +240,7 @@ namespace IconianPsycasts
             return backstory;
 
         }
-        public static TraitDef GetTraitDef(VFECore.Abilities.AbilityDef def, Rarity rarity, out int degree)
+        public static TraitDef GetTraitDef(VEF.Abilities.AbilityDef def, Rarity rarity, out int degree)
         {
             if (def == null)
             {

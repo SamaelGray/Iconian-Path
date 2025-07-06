@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
-using VFECore.Abilities;
-using Ability = VFECore.Abilities.Ability;
+using VEF.Abilities;
+using Ability = VEF.Abilities.Ability;
 using VanillaPsycastsExpanded;
 
 namespace IconianPsycasts
@@ -29,7 +29,8 @@ namespace IconianPsycasts
                 }
                 if(thing is Building_TurretSentry sentry)
                 {
-                    sentry.HitPoints = ability.GetDurationForPawn() / 90;
+                    sentry.HitPoints = ability.GetDurationForPawn() / Helper.TurretHealthTimeRatio;
+                    sentry.Duration = ability.GetDurationForPawn() / Helper.TurretHealthTimeRatio;
                 }
                 IntVec3 cell = AdjustCell(ability, globalTargetInfo.Cell, thing);
                 Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(globalTargetInfo.Cell, ability.Caster.Map, new Vector3(0, 3, 0));
