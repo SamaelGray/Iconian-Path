@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>Iconian_Bomber</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <!-- Downed -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+
+        <!-- Lord directives -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>LordDuty</treeDef>
+        </li>
+        <!-- Keep distance -->
+        <li Class="JobGiver_FleeForDistance">
+          <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+          <fleeDistRange>13.5~20</fleeDistRange>
+        </li>
+
+        <!-- React to close melee threat -->
+        <li Class="JobGiver_ReactToCloseMeleeThreat">
+          <maxDistance>2.9</maxDistance>
+        </li>
+
+        <!-- explode leap a target -->
+        <li Class="JobGiver_AIAbilityFight">
+          <targetAcquireRadius>80</targetAcquireRadius>
+          <targetKeepRadius>100</targetKeepRadius>
+          <ability>IconianLeap_Explode</ability>
+        </li>
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>MiscWork</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_WanderColony">
+              <maxDanger>Deadly</maxDanger>
+              <reportStringOverride>Patrolling.</reportStringOverride>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>BomberConstant</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <!-- Spawn mecs -->
+            <li Class="ThinkNode_ConditionalHasTarget">
+              <subNodes>
+                <li Class="JobGiver_AIAbilityFight">
+                  <targetAcquireRadius>80</targetAcquireRadius>
+                  <targetKeepRadius>100</targetKeepRadius>
+                  <ability>IconianLeap_Explode</ability>
+                </li>
+              </subNodes>
+            </li>
+
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>
