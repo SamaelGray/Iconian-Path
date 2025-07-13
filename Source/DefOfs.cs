@@ -9,7 +9,8 @@ namespace IconianPsycasts
         public static EffecterDef Iconian_TeleportEffect;
         public static HediffDef Iconian_MovementSpeedBoost;
         public static HediffDef Iconian_AttackSpeedBoost;
-        public static HediffDef Iconian_MinefieldDebuff;
+        public static HediffDef Iconian_MinefieldSlow;
+        public static DamageDef Iconian_Flame;
         public static ThingDef Iconian_Minefield;
         public static ThingDef Iconian_Turret;
         public static ThingDef Iconian_ScrapPile;

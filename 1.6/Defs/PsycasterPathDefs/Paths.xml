@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-  <VanillaPsycastsExpanded.PsycasterPathDef>
-    <defName>VPE_Iconian</defName>
-    <label>iconian</label>
-    <description>PLACEHOLDER</description>
-    <background>UI/Backgrounds/EmpathPath</background>
-    <altBackground>UI/AlternativeBackgrounds/PathBG_Empath</altBackground>
-    <tab>Psycasts</tab>
-    <tooltip>PLACEHOLDER</tooltip>
-  </VanillaPsycastsExpanded.PsycasterPathDef>
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+		<defName>VPE_Iconian</defName>
+		<label>iconian</label>
+		<description>PLACEHOLDER</description>
+		<background>UI/Backgrounds/Iconian</background>
+		<altBackground>UI/Backgrounds/Iconian</altBackground>
+		<tab>Psycasts</tab>
+		<tooltip>PLACEHOLDER</tooltip>
+	</VanillaPsycastsExpanded.PsycasterPathDef>
 
 </Defs>

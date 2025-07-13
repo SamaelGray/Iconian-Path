@@ -1,336 +1,318 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <!--Mental Abilities-->
-  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>Iconian_RerollAdultBackgroundCivillian</defName>
-    <label>Reroll Civillian</label>
-    <description>Placeholder description</description>
-    <iconPath>Abilities/Iconian/RerollMilitary</iconPath>
-    <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
-    <range>12.9</range>
-    <targetingParameters>
-      <canTargetHumans>true</canTargetHumans>
-      <canTargetAnimals>false</canTargetAnimals>
-      <canTargetMechs>false</canTargetMechs>
-      <canTargetSubhumans>false</canTargetSubhumans>
-    </targetingParameters>
-    <targetMode>Humanlike</targetMode>
-    <castFleck>PsycastAreaEffect</castFleck>
-    <castTime>1</castTime>
-    <cooldownTime>1</cooldownTime>
-    <!--1800000-->
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>1</level>
-        <order>1</order>
-        <psyfocusCost>0.02</psyfocusCost>
-        <entropyGain>0</entropyGain>
-      </li>
-      <li Class="IconianPsycasts.RerollExtension">
-        <traits>
-          <common>
-            <li>
-              <degree>0</degree>
-              <def>Gourmand</def>
-            </li>
-          </common>
-          <rare>
-            <li>
-              <degree>0</degree>
-              <def>QuickSleeper</def>
-            </li>
-          </rare>
-          <epic>
-            <li>
-              <degree>0</degree>
-              <def>TorturedArtist</def>
-            </li>
-          </epic>
-          <legendary>
-            <li>
-              <degree>0</degree>
+	<!--Mental Abilities-->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Iconian_RerollAdultBackgroundCivillian</defName>
+		<label>Reroll Civillian</label>
+		<description>Placeholder description</description>
+		<iconPath>Abilities/Iconian/RerollMilitary</iconPath>
+		<abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
+		<range>12.9</range>
+		<targetingParameters>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetSubhumans>false</canTargetSubhumans>
+		</targetingParameters>
+		<targetMode>Humanlike</targetMode>
+		<castFleck>PsycastAreaEffect</castFleck>
+		<castTime>1</castTime>
+		<cooldownTime>1</cooldownTime>
+		<!--1800000-->
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.90</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+				<li>Iconian_AmbushPortal</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.RerollExtension">
+				<traits>
+					<common>
+						<li>
+							<degree>0</degree>
+							<def>Gourmand</def>
+						</li>
+					</common>
+					<rare>
+						<li>
+							<degree>0</degree>
+							<def>QuickSleeper</def>
+						</li>
+					</rare>
+					<epic>
+						<li>
+							<degree>0</degree>
+							<def>TorturedArtist</def>
+						</li>
+					</epic>
+					<legendary>
+						<li>
+							<degree>0</degree>
 
-              <def>Tough</def>
-            </li>
-          </legendary>
-        </traits>
-        <backgrounds>
-          <common>
-            <li>Hermit82</li>
-            <li>MedievalFarmOaf58</li>
-          </common>
-          <rare>
-            <li>PsychiatricPatient94</li>
-          </rare>
-          <epic>
-            <li>FactoryWorker58</li>
-          </epic>
-          <legendary>
-            <li>MedievalLord57</li>
-          </legendary>
-        </backgrounds>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>Iconian_RerollAdultBackgroundMilitary</defName>
-    <label>reroll military</label>
-    <description>Placeholder description</description>
-    <iconPath>Abilities/Iconian/RerollMilitary</iconPath>
-    <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
-    <range>12.9</range>
-    <targetingParameters>
-      <canTargetHumans>true</canTargetHumans>
-      <canTargetAnimals>false</canTargetAnimals>
-      <canTargetMechs>false</canTargetMechs>
-      <canTargetSubhumans>false</canTargetSubhumans>
-    </targetingParameters>
-    <targetMode>Humanlike</targetMode>
-    <castFleck>PsycastAreaEffect</castFleck>
-    <castTime>1</castTime>
-    <cooldownTime>1</cooldownTime>
-    <!--1800000-->
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>2</level>
-        <order>1</order>
-        <psyfocusCost>0.02</psyfocusCost>
-        <entropyGain>0</entropyGain>
-        <prerequisites>
-          <li>Iconian_RerollAdultBackgroundCivillian</li>
-        </prerequisites>
-      </li>
-      <li Class="IconianPsycasts.RerollExtension">
-        <traits>
-          <common>
-            <li>
-              <degree>0</degree>
-              <def>Gourmand</def>
-            </li>
-          </common>
-          <rare>
-            <li>
-              <degree>0</degree>
+							<def>Tough</def>
+						</li>
+					</legendary>
+				</traits>
+				<backgrounds>
+					<common>
+						<li>Hermit82</li>
+						<li>MedievalFarmOaf58</li>
+					</common>
+					<rare>
+						<li>PsychiatricPatient94</li>
+					</rare>
+					<epic>
+						<li>FactoryWorker58</li>
+					</epic>
+					<legendary>
+						<li>MedievalLord57</li>
+					</legendary>
+				</backgrounds>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>Iconian_RerollAdultBackgroundMilitary</defName>
+		<label>reroll military</label>
+		<description>Placeholder description</description>
+		<iconPath>Abilities/Iconian/RerollMilitary</iconPath>
+		<abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
+		<range>12.9</range>
+		<targetingParameters>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetSubhumans>false</canTargetSubhumans>
+		</targetingParameters>
+		<targetMode>Humanlike</targetMode>
+		<castFleck>PsycastAreaEffect</castFleck>
+		<castTime>1</castTime>
+		<cooldownTime>1</cooldownTime>
+		<!--1800000-->
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>3</level>
+				<order>1</order>
+				<psyfocusCost>0.90</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>Iconian_RerollAdultBackgroundCivillian</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.RerollExtension">
+				<traits>
+					<common>
+						<li>
+							<degree>0</degree>
+							<def>Gourmand</def>
+						</li>
+					</common>
+					<rare>
+						<li>
+							<degree>0</degree>
 
-              <def>QuickSleeper</def>
-            </li>
-          </rare>
-          <epic>
-            <li>
-              <degree>0</degree>
+							<def>QuickSleeper</def>
+						</li>
+					</rare>
+					<epic>
+						<li>
+							<degree>0</degree>
 
-              <def>TorturedArtist</def>
-            </li>
-          </epic>
-          <legendary>
-            <li>
-              <degree>0</degree>
+							<def>TorturedArtist</def>
+						</li>
+					</epic>
+					<legendary>
+						<li>
+							<degree>0</degree>
 
-              <def>Tough</def>
-            </li>
-          </legendary>
-        </traits>
-        <backgrounds>
-          <common>
-            <li>Hermit82</li>
-            <li>MedievalFarmOaf58</li>
-          </common>
-          <rare>
-            <li>PsychiatricPatient94</li>
-          </rare>
-          <epic>
-            <li>FactoryWorker58</li>
-          </epic>
-          <legendary>
-            <li>MedievalLord57</li>
-          </legendary>
-        </backgrounds>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
+							<def>Tough</def>
+						</li>
+					</legendary>
+				</traits>
+				<backgrounds>
+					<common>
+						<li>Hermit82</li>
+						<li>MedievalFarmOaf58</li>
+					</common>
+					<rare>
+						<li>PsychiatricPatient94</li>
+					</rare>
+					<epic>
+						<li>FactoryWorker58</li>
+					</epic>
+					<legendary>
+						<li>MedievalLord57</li>
+					</legendary>
+				</backgrounds>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
 
-  <!--Combat-->
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_AmbushPortal</defName>
-    <label>Ambush portal</label>
-    <description>Use the gate network to move behind the target pawn stunning it if targeting enemy and get a melee attack speed boost.</description>
-    <abilityClass>IconianPsycasts.Ability_AmbushPortal</abilityClass>
-    <iconPath>Abilities/Iconian/AmbushPortal</iconPath>
-    <castTime>60</castTime>
-    <cooldownTime>5000</cooldownTime>
-    <needsTicking>true</needsTicking>
-    <showUndrafted>true</showUndrafted>
-    <range>45</range>
-    <rangeStatFactors>
-      <PsychicSensitivity>1</PsychicSensitivity>
-    </rangeStatFactors>
-    <targetingParameters>
-      <canTargetLocations>false</canTargetLocations>
-      <canTargetPawns>true</canTargetPawns>
-    </targetingParameters>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>1</level>
-        <order>2</order>
-        <psyfocusCost>0.02</psyfocusCost>
-        <entropyGain>0</entropyGain>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_Minefield</defName>
-    <label>mine field</label>
-    <description>Placeholder</description>
-    <iconPath>Abilities/Iconian/AmbushPortal</iconPath>
-    <abilityClass>IconianPsycasts.Ability_Minefield</abilityClass>
-    <castTime>300</castTime>
-    <range>45.9</range>
-    <radius>4.9</radius>
-    <targetMode>Location</targetMode>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>2</level>
-        <order>2</order>
-        <psyfocusCost>0.8</psyfocusCost>
-        <entropyGain>120</entropyGain>
-        <prerequisites>
-          <li>Iconian_AmbushPortal</li>
-        </prerequisites>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_SummonMine</defName>
-    <label>Summon Mine</label>
-    <description>Placeholder</description>
-    <iconPath>Abilities/Iconian/DeployAntiprotonMines</iconPath>
-    <abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
-    <needsTicking>true</needsTicking>
-    <castTime>150</castTime>
-    <range>45.9</range>
-    <targetMode>Location</targetMode>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>3</level>
-        <order>2</order>
-        <psyfocusCost>0.1</psyfocusCost>
-        <entropyGain>25</entropyGain>
-        <prerequisites>
-          <li>Iconian_Minefield</li>
-        </prerequisites>
-      </li>
-      <li Class="IconianPsycasts.SummonExtension">
-        <allowedBuildings>
-          <li MayRequire="kentington.saveourship2">ShipHullTileWrecked</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTile</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileMech</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileArchotech</li>
-        </allowedBuildings>
-        <thingDef>Iconian_TurretMine</thingDef>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_SummonTurret</defName>
-    <label>Summon Turret</label>
-    <description>Placeholder</description>
-    <iconPath>Abilities/Iconian/DeploySolarBeamTurret</iconPath>
-    <abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
-    <needsTicking>true</needsTicking>
-    <castTime>150</castTime>
-    <range>45.9</range>
-    <targetMode>Location</targetMode>
-    <durationTime>90000</durationTime>
-    <durationTimeStatFactors>
-      <PsychicSensitivity>5</PsychicSensitivity>
-    </durationTimeStatFactors>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>4</level>
-        <order>2</order>
-        <psyfocusCost>0.1</psyfocusCost>
-        <entropyGain>25</entropyGain>
-        <prerequisites>
-          <li>Iconian_SummonMine</li>
-        </prerequisites>
-      </li>
-      <li Class="IconianPsycasts.SummonExtension">
-        <allowedBuildings>
-          <li MayRequire="kentington.saveourship2">ShipHullTileWrecked</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTile</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileMech</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileArchotech</li>
-        </allowedBuildings>
-        <thingDef>Iconian_Turret</thingDef>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_SummonTrashSpawner</defName>
-    <label>Summon Trash Spawner</label>
-    <description>Placeholder</description>
-    <iconPath>Abilities/Iconian/DeployShieldRecharger</iconPath>
-    <abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
-    <needsTicking>true</needsTicking>
-    <castTime>150</castTime>
-    <range>45.9</range>
-    <targetMode>Location</targetMode>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>1</level>
-        <order>3</order>
-        <psyfocusCost>0.1</psyfocusCost>
-        <entropyGain>25</entropyGain>
-      </li>
-      <li Class="IconianPsycasts.SummonExtension">
-        <allowedBuildings>
-          <li MayRequire="kentington.saveourship2">ShipHullTileWrecked</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTile</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileMech</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileArchotech</li>
-        </allowedBuildings>
-        <thingDef>Iconian_PortalSpawner</thingDef>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-  <VEF.Abilities.AbilityDef>
-    <defName>Iconian_SummonTrashEater</defName>
-    <label>Summon Trash Eater</label>
-    <description>Placeholder</description>
-    <iconPath>Abilities/Iconian/DeployMilitors</iconPath>
-    <abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
-    <needsTicking>true</needsTicking>
-    <castTime>150</castTime>
-    <range>45.9</range>
-    <targetMode>Location</targetMode>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_Iconian</path>
-        <level>2</level>
-        <order>3</order>
-        <psyfocusCost>0.1</psyfocusCost>
-        <entropyGain>25</entropyGain>
-        <prerequisites>
-          <li>Iconian_SummonTrashSpawner</li>
-        </prerequisites>
-      </li>
-      <li Class="IconianPsycasts.SummonExtension">
-        <allowedBuildings>
-          <li MayRequire="kentington.saveourship2">ShipHullTileWrecked</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTile</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileMech</li>
-          <li MayRequire="kentington.saveourship2">ShipHullTileArchotech</li>
-        </allowedBuildings>
-        <pawnDef>Iconian_TrashEater</pawnDef>
-      </li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
+	<!--Combat-->
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_AmbushPortal</defName>
+		<label>Ambush portal</label>
+		<description>Use the gate network to move behind the target pawn stunning it if targeting enemy and get a melee attack speed boost.</description>
+		<abilityClass>IconianPsycasts.Ability_AmbushPortal</abilityClass>
+		<iconPath>Abilities/Iconian/AmbushPortal</iconPath>
+		<castTime>60</castTime>
+		<cooldownTime>5000</cooldownTime>
+		<needsTicking>true</needsTicking>
+		<showUndrafted>true</showUndrafted>
+		<range>45</range>
+		<rangeStatFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</rangeStatFactors>
+		<targetingParameters>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetPawns>true</canTargetPawns>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.02</psyfocusCost>
+				<entropyGain>0</entropyGain>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_Minefield</defName>
+		<label>mine field</label>
+		<description>Placeholder</description>
+		<iconPath>Abilities/Iconian/AmbushPortal</iconPath>
+		<abilityClass>IconianPsycasts.Ability_Minefield</abilityClass>
+		<castTime>300</castTime>
+		<range>59.9</range>
+		<radius>18.9</radius>
+		<targetMode>Location</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.8</psyfocusCost>
+				<entropyGain>120</entropyGain>
+				<prerequisites>
+					<li>Iconian_SummonTurret</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_SummonMine</defName>
+		<label>Summon Mine</label>
+		<description>Placeholder</description>
+		<iconPath>Abilities/Iconian/DeployAntiprotonMines</iconPath>
+		<abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>150</castTime>
+		<range>45.9</range>
+		<targetMode>Location</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>2</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>Iconian_AmbushPortal</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.SummonExtension">
+				<thingDef>Iconian_TurretMine</thingDef>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_SummonTurret</defName>
+		<label>Summon Turret</label>
+		<description>Placeholder</description>
+		<iconPath>Abilities/Iconian/DeploySolarBeamTurret</iconPath>
+		<abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>150</castTime>
+		<range>45.9</range>
+		<targetMode>Location</targetMode>
+		<durationTime>90000</durationTime>
+		<durationTimeStatFactors>
+			<PsychicSensitivity>5</PsychicSensitivity>
+		</durationTimeStatFactors>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>Iconian_SummonMine</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.SummonExtension">
+				<thingDef>Iconian_Turret</thingDef>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_SummonTrashSpawner</defName>
+		<label>Summon Trash Spawner</label>
+		<description>Placeholder</description>
+		<iconPath>Abilities/Iconian/SummonConstruct</iconPath>
+		<abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>150</castTime>
+		<range>45.9</range>
+		<targetMode>Location</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>Iconian_SummonMine</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.SummonExtension">
+				<thingDef>Iconian_PortalSpawner</thingDef>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef>
+		<defName>Iconian_SummonTrashEater</defName>
+		<label>Summon Trash Eater</label>
+		<description>Placeholder</description>
+		<iconPath>Abilities/Iconian/SummonDrone</iconPath>
+		<abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
+		<needsTicking>true</needsTicking>
+		<castTime>150</castTime>
+		<range>45.9</range>
+		<targetMode>Location</targetMode>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Iconian</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.1</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>Iconian_SummonTrashSpawner</li>
+				</prerequisites>
+			</li>
+			<li Class="IconianPsycasts.SummonExtension">
+				<pawnDef>Iconian_TrashEater</pawnDef>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
 </Defs>

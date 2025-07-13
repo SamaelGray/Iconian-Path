@@ -39,20 +39,9 @@ namespace IconianPsycasts
             {
                 if (InAffectedArea(item2.Position))
                 {
-                    Hediff firstHediffOfDef = item2.health.hediffSet.GetFirstHediffOfDef(DefOfs.Iconian_MinefieldDebuff);
-                    if (firstHediffOfDef != null)
-                    {
-                        firstHediffOfDef.TryGetComp<HediffComp_Disappears>().ticksToDisappear = 120;
-                    }
-                    else
-                    {
-                        firstHediffOfDef = HediffMaker.MakeHediff(DefOfs.Iconian_MinefieldDebuff, item2);
-                        item2.health.AddHediff(firstHediffOfDef);
-                    }
                     if (item2.IsHashIntervalTick(60))
                     {
-                        HealthUtility.AdjustSeverity(item2, DefOfs.Iconian_MinefieldDebuff, 0.02f);
-                        DamageInfo dinfo = new DamageInfo(DamageDefOf.Cut, Rand.RangeInclusive(1, 3));
+                        DamageInfo dinfo = new DamageInfo(DefOfs.Iconian_Flame, Rand.RangeInclusive(1, 3));
                         item2.TakeDamage(dinfo);
                     }
                     if (Pawn.Faction == Faction.OfPlayer)

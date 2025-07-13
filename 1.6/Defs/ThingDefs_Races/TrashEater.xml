@@ -70,7 +70,8 @@
         <pawnToSpawn>Iconian_Bomber</pawnToSpawn>
         <spawnAbilityCooldownTicks>300</spawnAbilityCooldownTicks>
         <thingToEat>Iconian_ScrapPile</thingToEat>
-        <gizmoIcon>Abilities/Iconian/DeployMilitors</gizmoIcon>
+        <gizmoIconSummon>Abilities/Iconian/SpawnSuicideDrone</gizmoIconSummon>
+        <gizmoIconeat>Abilities/Iconian/VacuumAuto</gizmoIconeat>
       </li>
       <li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
         <gizmoImage>Effects/Technomancer/BreakLink/BreakLinkSteelConstruct</gizmoImage>

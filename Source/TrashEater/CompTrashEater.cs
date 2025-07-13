@@ -107,7 +107,7 @@ namespace IconianPsycasts
                 },
                 //hotKey = KeyBindingDefOf.Misc2,
                 Disabled = !canSpawn.Accepted,
-                icon = ContentFinder<Texture2D>.Get(Props.gizmoIcon),
+                icon = ContentFinder<Texture2D>.Get(Props.gizmoIconSummon),
                 defaultLabel = "IconianSummonPawn".Translate(pawnToSummon.labelPlural),
                 defaultDesc = "IconianSummonPawnDec".Translate(pawnToSummon.labelPlural, Props.thingToEat.label)
             };
@@ -148,7 +148,7 @@ namespace IconianPsycasts
                 },
 
                 Disabled = currentStored == maxStored, // !canSpawn.Accepted,
-                icon = ContentFinder<Texture2D>.Get(Props.gizmoIcon),
+                icon = ContentFinder<Texture2D>.Get(Props.gizmoIconeat),
                 defaultLabel = "Iconian_EatScrap".Translate(),
                 defaultDesc = "Iconian_EatScrapDesc".Translate()
             };

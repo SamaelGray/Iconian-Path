@@ -8,15 +8,15 @@
     <thingClass>IconianPsycasts.Building_PortalSpawner</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>Buildings/ShieldRegenerator</texPath>
+      <texPath>Buildings/PortalB</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
+      <drawSize>(3, 3)</drawSize>
       <drawOffset>(0,0,-0.1)</drawOffset>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <stealable>false</stealable>
     <rotatable>false</rotatable>
-    <size>(1,1)</size>
+    <size>(3,3)</size>
     <statBases>
       <MaxHitPoints>1000</MaxHitPoints>
       <Flammability>0</Flammability>
