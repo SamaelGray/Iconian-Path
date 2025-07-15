@@ -1,249 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- Mine/Turret -->
-  <ThingDef ParentName="BuildingBase">
-    <defName>Iconian_TurretMine</defName>
-    <label>jumping mine</label>
-    <description>placeholder</description>
-    <thingClass>IconianPsycasts.Building_TurretGunSummoned</thingClass>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <graphicData>
-      <texPath>Buildings/Null</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
-      <drawOffset>(0,0,-0.1)</drawOffset>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <size>(1,1)</size>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>100</Mass>
-      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
-      <Beauty>-20</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.85</fillPercent>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <buildingTags>
-        <li>Iconian_TurretMine</li>
-      </buildingTags>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>Gun_TurretMine</turretGunDef>
-      <turretTopDrawSize>2.5</turretTopDrawSize>
-      <turretTopOffset>(0, 0)</turretTopOffset>
-    </building>
-    <uiIconScale>0.95</uiIconScale>
-    <comps>
-      <li Class="IconianPsycasts.CompProperties_BreakLinkBuilding">
-        <gizmoImage>Things/Motes/Explosion</gizmoImage>
-        <gizmoLabel>Iconian_BreakLinkBuilding</gizmoLabel>
-        <gizmoDesc>Iconian_BreakLinkBuildingDesc</gizmoDesc>
-      </li>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>240</wickTicks>
-        <explosiveRadius>5.9</explosiveRadius>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
-      </li>
-      <li Class="CompProperties_Refuelable">
-        <fuelCapacity>1</fuelCapacity>
-        <fuelMultiplier>1</fuelMultiplier>
-        <initialFuelPercent>1</initialFuelPercent>
-        <fuelFilter>
-          <thingDefs>
-            <li>Uranium</li>
-          </thingDefs>
-        </fuelFilter>
-        <showFuelGizmo>false</showFuelGizmo>
-        <minimumFueledThreshold>1</minimumFueledThreshold>
-        <factorByDifficulty>false</factorByDifficulty>
-        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-        <destroyOnNoFuel>True</destroyOnNoFuel>
-      </li>
-    </comps>
-  </ThingDef>
+	<!-- Mine/Turret -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>Iconian_TurretMine</defName>
+		<label>jumping mine</label>
+		<description>placeholder</description>
+		<thingClass>IconianPsycasts.Building_TurretGunSummoned</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Buildings/Null</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<size>(1,1)</size>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>100</Mass>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.85</fillPercent>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<buildingTags>
+				<li>Iconian_TurretMine</li>
+			</buildingTags>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_TurretMine</turretGunDef>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<turretTopOffset>(0, 0)</turretTopOffset>
+		</building>
+		<uiIconScale>0.95</uiIconScale>
+		<comps>
+			<li Class="IconianPsycasts.CompProperties_BreakLinkBuilding">
+				<gizmoImage>Things/Motes/Explosion</gizmoImage>
+				<gizmoLabel>Iconian_BreakLinkBuilding</gizmoLabel>
+				<gizmoDesc>Iconian_BreakLinkBuildingDesc</gizmoDesc>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>9.9</explosiveRadius>
+				<explosiveDamageType>Iconian_BombSmall</explosiveDamageType>
+				<explosionEffect>Iconian_MiniNuke</explosionEffect>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+				<startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>1</fuelCapacity>
+				<fuelMultiplier>1</fuelMultiplier>
+				<initialFuelPercent>1</initialFuelPercent>
+				<fuelFilter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</fuelFilter>
+				<showFuelGizmo>false</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>false</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<destroyOnNoFuel>True</destroyOnNoFuel>
+			</li>
+		</comps>
+	</ThingDef>
 
-  <ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
-    <defName>Gun_TurretMine</defName>
-    <label>turret mine gun</label>
-    <description>placeholder</description>
-    <graphicData>
-      <texPath>Things/Motes/Explosion</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
-    </graphicData>
-    <statBases>
-      <AccuracyTouch>0.9</AccuracyTouch>
-      <AccuracyShort>0.9</AccuracyShort>
-      <AccuracyMedium>0.99</AccuracyMedium>
-      <AccuracyLong>0.9</AccuracyLong>
-      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
-      <DeteriorationRate>0</DeteriorationRate>
-      <Mass>5</Mass>
-      <Flammability>0</Flammability>
-    </statBases>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_TurretMine</defaultProjectile>
-        <forcedMissRadius>2.9</forcedMissRadius>
-        <warmupTime>0</warmupTime>
-        <range>16.9</range>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>Shot_TurretSniper</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>18</muzzleFlashScale>
-        <consumeFuelPerShot>1</consumeFuelPerShot>
-      </li>
-    </verbs>
-  </ThingDef>
+	<ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
+		<defName>Gun_TurretMine</defName>
+		<label>turret mine gun</label>
+		<description>placeholder</description>
+		<graphicData>
+			<texPath>Things/Motes/Explosion</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.9</AccuracyTouch>
+			<AccuracyShort>0.9</AccuracyShort>
+			<AccuracyMedium>0.99</AccuracyMedium>
+			<AccuracyLong>0.9</AccuracyLong>
+			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_TurretMine</defaultProjectile>
+				<forcedMissRadius>2.9</forcedMissRadius>
+				<warmupTime>0</warmupTime>
+				<range>16.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>18</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>Bullet_TurretMine</defName>
-    <label>bomb</label>
-    <graphicData>
-      <texPath>Things/Motes/Explosion</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.4</drawSize>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <damageDef>Iconian_BombSuper</damageDef>
-      <explosionRadius>16.9</explosionRadius>
-      <speed>38</speed>
-      <damageAmountBase>60</damageAmountBase>
-      <arcHeightFactor>0.4</arcHeightFactor>
-      <soundExplode>Explosion_Rocket</soundExplode>
-    </projectile>
-  </ThingDef>
-  
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>Iconian_Turret</defName>
-    <label>turret</label>
-    <description>placeholder</description>
-    <thingClass>IconianPsycasts.Building_TurretSentry</thingClass>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <graphicData>
-      <texPath>Buildings/Null</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
-      <drawOffset>(0,0,-0.1)</drawOffset>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <stealable>false</stealable>
-    <rotatable>false</rotatable>
-    <size>(1,1)</size>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <Flammability>0</Flammability>
-      <Mass>100</Mass>
-      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
-      <Beauty>-20</Beauty>
-    </statBases>
-    <damageMultipliers>
-      <li>
-        <damageDef>Flame</damageDef>
-        <multiplier>0</multiplier>
-      </li>
-    </damageMultipliers>
-    <tickerType>Normal</tickerType>
-    <passability>PassThroughOnly</passability>
-    <pathCost>50</pathCost>
-    <fillPercent>0.85</fillPercent>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <building>
-      <buildingTags>
-        <li>Iconian_Turret</li>
-      </buildingTags>
-      <ai_combatDangerous>true</ai_combatDangerous>
-      <turretGunDef>IconianGun_Turret</turretGunDef>
-      <turretTopDrawSize>2.5</turretTopDrawSize>
-      <turretTopOffset>(0, 0)</turretTopOffset>
-    </building>
-    <uiIconScale>0.95</uiIconScale>
-    <comps>
-      <li Class="IconianPsycasts.CompProperties_BreakLinkBuilding">
-        <gizmoImage>Things/Motes/Explosion</gizmoImage>
-        <gizmoLabel>Iconian_BreakLinkBuilding</gizmoLabel>
-        <gizmoDesc>Iconian_BreakLinkBuildingDesc</gizmoDesc>
-      </li>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>15</wickTicks>
-        <explosiveRadius>5.9</explosiveRadius>
-        <damageAmountBase>50</damageAmountBase>
-        <explosiveDamageType>Bomb</explosiveDamageType>
-        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
-        <startWickHitPointsPercent>0</startWickHitPointsPercent>
-      </li>
-    </comps>
-
-  </ThingDef>
-
-  <ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
-    <defName>IconianGun_Turret</defName>
-    <label>turret gun</label>
-    <description>placeholder</description>
-    <graphicData>
-      <texPath>Buildings/AlienLaserTurret_Top</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
-    </graphicData>
-    <statBases>
-      <AccuracyTouch>0.9</AccuracyTouch>
-      <AccuracyShort>0.9</AccuracyShort>
-      <AccuracyMedium>0.99</AccuracyMedium>
-      <AccuracyLong>0.9</AccuracyLong>
-      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
-      <DeteriorationRate>0</DeteriorationRate>
-      <Mass>5</Mass>
-      <Flammability>0</Flammability>
-    </statBases>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>IconianBullet_Turret</defaultProjectile>
-        <warmupTime>0</warmupTime>
-        <range>16.9</range>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>Shot_TurretSniper</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>18</muzzleFlashScale>
-        <consumeFuelPerShot>1</consumeFuelPerShot>
-      </li>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_TurretMine</defName>
+		<label>bomb</label>
+		<graphicData>
+			<texPath>Things/Motes/Explosion</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.4</drawSize>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Iconian_BombSmall</damageDef>
+			<explosionRadius>9.9</explosionRadius>
+			<speed>40</speed>
+			<explosionEffect>Iconian_MiniNuke</explosionEffect>
+			<damageAmountBase>60</damageAmountBase>
+			<arcHeightFactor>0.4</arcHeightFactor>
+			<soundExplode>Iconian_Explosion</soundExplode>
+		</projectile>
+	</ThingDef>
 
 
-    </verbs>
-  </ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Iconian_Turret</defName>
+		<label>turret</label>
+		<description>placeholder</description>
+		<thingClass>IconianPsycasts.Building_TurretSentry</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Buildings/Null</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+			<drawOffset>(0,0,-0.1)</drawOffset>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<size>(1,1)</size>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Mass>100</Mass>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>0</multiplier>
+			</li>
+		</damageMultipliers>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.85</fillPercent>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<building>
+			<buildingTags>
+				<li>Iconian_Turret</li>
+			</buildingTags>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>IconianGun_Turret</turretGunDef>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<turretTopOffset>(0, 0)</turretTopOffset>
+		</building>
+		<uiIconScale>0.95</uiIconScale>
+		<comps>
+			<li Class="IconianPsycasts.CompProperties_BreakLinkBuilding">
+				<gizmoImage>Things/Motes/Explosion</gizmoImage>
+				<gizmoLabel>Iconian_BreakLinkBuilding</gizmoLabel>
+				<gizmoDesc>Iconian_BreakLinkBuildingDesc</gizmoDesc>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>15</wickTicks>
+				<explosiveRadius>14</explosiveRadius>
+				<damageAmountBase>200</damageAmountBase>
+				<explosionEffect>Iconian_MiniTorpedo</explosionEffect>
+				<explosiveDamageType>Iconian_BombSuper</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+				<startWickHitPointsPercent>0</startWickHitPointsPercent>
+			</li>
+		</comps>
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>IconianBullet_Turret</defName>
-    <label>turret shot</label>
-    <graphicData>
-      <texPath>Things/Projectiles/Projectile_Normal1</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.4</drawSize>
-    </graphicData>
-    <projectile>
-      <damageDef>Bullet</damageDef>
-      <speed>38</speed>
-      <damageAmountBase>60</damageAmountBase>
-      <arcHeightFactor>0.4</arcHeightFactor>
-      <soundExplode>Explosion_Rocket</soundExplode>
-    </projectile>
-  </ThingDef>
+	</ThingDef>
+
+	<ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
+		<defName>IconianGun_Turret</defName>
+		<label>turret gun</label>
+		<description>placeholder</description>
+		<graphicData>
+			<texPath>Buildings/AlienLaserTurret_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5, 1.5)</drawSize>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.9</AccuracyTouch>
+			<AccuracyShort>0.9</AccuracyShort>
+			<AccuracyMedium>0.99</AccuracyMedium>
+			<AccuracyLong>0.9</AccuracyLong>
+			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>IconianBullet_Turret</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>16.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>18</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+
+
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>IconianBullet_Turret</defName>
+		<label>turret shot</label>
+		<graphicData>
+			<texPath>Things/Projectiles/Projectile_Normal1</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.4</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<speed>38</speed>
+			<damageAmountBase>60</damageAmountBase>
+			<arcHeightFactor>0.4</arcHeightFactor>
+			<soundExplode>Explosion_Rocket</soundExplode>
+		</projectile>
+	</ThingDef>
 
 </Defs>

@@ -1,59 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <ThingDef ParentName="MoteBase">
-        <defName>FleckIconianTeleportRing</defName>
-        <altitudeLayer>VisEffects</altitudeLayer>
-        <mote>
-            <fadeInTime>0.03</fadeInTime>
-            <fadeOutTime>1.3</fadeOutTime>
-            <solidTime>0.08</solidTime>
-        </mote>
-        <graphicData>
-            <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
-            <texPath>Effects/SmokeEffect</texPath>
-            <drawSize>2.6</drawSize>
-        </graphicData>
-    </ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>FleckIconianTeleportRing</defName>
+		<altitudeLayer>VisEffects</altitudeLayer>
+		<mote>
+			<fadeInTime>0.03</fadeInTime>
+			<fadeOutTime>1.3</fadeOutTime>
+			<solidTime>0.08</solidTime>
+		</mote>
+		<graphicData>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<texPath>Effects/SmokeEffect</texPath>
+			<drawSize>2.6</drawSize>
+		</graphicData>
+	</ThingDef>
 
-    <ThingDef ParentName="MoteBase">
-        <defName>FleckIconianInkEffect</defName>
-        <altitudeLayer>VisEffects</altitudeLayer>
-        <mote>
-            <fadeInTime>0.03</fadeInTime>
-            <fadeOutTime>1.3</fadeOutTime>
-            <solidTime>0.08</solidTime>
-        </mote>
-        <graphicData>
-            <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
-            <texPath>Effects/InkEffect</texPath>
-            <drawSize>2.6</drawSize>
-        </graphicData>
-    </ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>FleckIconianInkEffect</defName>
+		<altitudeLayer>VisEffects</altitudeLayer>
+		<mote>
+			<fadeInTime>0.03</fadeInTime>
+			<fadeOutTime>1.3</fadeOutTime>
+			<solidTime>0.08</solidTime>
+		</mote>
+		<graphicData>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<texPath>Effects/InkEffect</texPath>
+			<drawSize>2.6</drawSize>
+		</graphicData>
+	</ThingDef>
 
-    <EffecterDef>
-        <defName>Iconian_TeleportEffect</defName>
+	<EffecterDef>
+		<defName>Iconian_TeleportEffect</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>FleckIconianTeleportRing</moteDef>
+				<burstCount>1~1</burstCount>
+				<scale>1~1</scale>
+				<rotationRate>180~180</rotationRate>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>FleckIconianInkEffect</moteDef>
+				<burstCount>1~1</burstCount>
+				<scale>1.5~1.5</scale>
+				<rotationRate>90~90</rotationRate>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+				<soundDef>Iconian_PortalStart</soundDef>
+			</li>
+		</children>
+	</EffecterDef>
+
+	<EffecterDef>
+		<defName>Iconian_MiniNuke</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>Iconian_MiniNukeExplosion</moteDef>
+				<scale>12</scale>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>Iconian_MiniNukeExplosionDots</moteDef>
+				<scale>10</scale>
+				<color>(1, 1, 1, 0.5)</color>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>
+		</children>
+	</EffecterDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>Iconian_MiniNukeExplosion</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<thingClass>MoteAttached</thingClass>
+		<mote>
+			<fadeInTime>0.06</fadeInTime>
+			<solidTime>0.08</solidTime>
+			<fadeOutTime>0.2</fadeOutTime>
+			<growthRate>5</growthRate>
+		</mote>
+		<graphicData>
+			<texPath>Things/Motes/Explosion</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>Iconian_MiniNukeExplosionDots</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<thingClass>MoteAttached</thingClass>
+		<mote>
+			<fadeInTime>0.04</fadeInTime>
+			<solidTime>0.08</solidTime>
+			<fadeOutTime>0.4</fadeOutTime>
+			<growthRate>9</growthRate>
+		</mote>
+		<graphicData>
+			<texPath>Things/Motes/Explosion_Dots</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<EffecterDef>
+        <defName>Iconian_MiniTorpedo</defName>
         <children>
             <li>
                 <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <moteDef>FleckIconianTeleportRing</moteDef>
-                <burstCount>1~1</burstCount>
-                <scale>1~1</scale>
-                <rotationRate>180~180</rotationRate>
+                <moteDef>Iconian_MiniTorpedoExplosion</moteDef>
+                <scale>12</scale>
+                <burstCount>1</burstCount>
                 <spawnLocType>OnSource</spawnLocType>
+                <attachToSpawnThing>true</attachToSpawnThing>
             </li>
             <li>
                 <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <moteDef>FleckIconianInkEffect</moteDef>
-                <burstCount>1~1</burstCount>
-                <scale>1.5~1.5</scale>
-                <rotationRate>90~90</rotationRate>
+                <moteDef>Iconian_MiniTorpedoExplosionDots</moteDef>
+                <scale>14.5</scale>
+                <color>(1, 1, 1, 0.5)</color>
+                <burstCount>1</burstCount>
                 <spawnLocType>OnSource</spawnLocType>
-            </li>
-            <li>
-                <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
-                <soundDef>Iconian_PortalStart</soundDef>
+                <attachToSpawnThing>true</attachToSpawnThing>
             </li>
         </children>
     </EffecterDef>
+
+    <ThingDef ParentName="MoteBase">
+        <defName>Iconian_MiniTorpedoExplosion</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <thingClass>MoteAttached</thingClass>
+        <mote>
+            <fadeInTime>0.06</fadeInTime>
+            <solidTime>0.08</solidTime>
+            <fadeOutTime>0.2</fadeOutTime>
+            <growthRate>5</growthRate>
+        </mote>
+        <graphicData>
+            <texPath>Things/Motes/Explosion</texPath>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="MoteBase">
+        <defName>Iconian_MiniTorpedoExplosionDots</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <thingClass>MoteAttached</thingClass>
+        <mote>
+            <fadeInTime>0.04</fadeInTime>
+            <solidTime>0.08</solidTime>
+            <fadeOutTime>0.4</fadeOutTime>
+            <growthRate>9</growthRate>
+        </mote>
+        <graphicData>
+            <texPath>Things/Motes/Explosion_Dots</texPath>
+            <shaderType>MoteGlow</shaderType>
+        </graphicData>
+    </ThingDef>
 </Defs>
