@@ -12,7 +12,7 @@ namespace IconianPsycasts
     {
         public float radius = 15.9f;
         public int damage = 50;
-        public DamageDef damageDef = DamageDefOf.Bomb;
+        public DamageDef damageDef = DefOfs.Iconian_BombSmall;
         public CompProperties_ExplodeLeap()
         {
             compClass = typeof(CompAbilityEffect_ExplodeLeap);

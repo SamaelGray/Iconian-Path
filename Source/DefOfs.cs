@@ -10,11 +10,13 @@ namespace IconianPsycasts
         public static HediffDef Iconian_MovementSpeedBoost;
         public static HediffDef Iconian_AttackSpeedBoost;
         public static HediffDef Iconian_MinefieldSlow;
-        public static DamageDef Iconian_Flame;
         public static ThingDef Iconian_Minefield;
         public static ThingDef Iconian_Turret;
         public static ThingDef Iconian_ScrapPile;
         public static JobDef Iconian_EatThingForced;
         public static JobDef Iconian_EatThing;
+        public static DamageDef Iconian_Flame;
+        public static DamageDef Iconian_BombSmall;
     }
+    
 }

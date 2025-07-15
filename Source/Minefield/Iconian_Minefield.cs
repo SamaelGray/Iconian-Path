@@ -41,7 +41,7 @@ namespace IconianPsycasts
                 {
                     if (item2.IsHashIntervalTick(60))
                     {
-                        DamageInfo dinfo = new DamageInfo(DefOfs.Iconian_Flame, Rand.RangeInclusive(1, 3));
+                        DamageInfo dinfo = new DamageInfo(DefOfs.Iconian_Flame, Rand.RangeInclusive(1, 6));
                         item2.TakeDamage(dinfo);
                     }
                     if (Pawn.Faction == Faction.OfPlayer)

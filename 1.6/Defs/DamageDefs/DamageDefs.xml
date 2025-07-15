@@ -5,7 +5,15 @@
 		<defaultDamage>1100</defaultDamage>
 		<soundExplosion>Iconian_Explosion</soundExplosion>
 		<defaultStoppingPower>2.0</defaultStoppingPower>
-		<defaultArmorPenetration>500000</defaultArmorPenetration>
+		<defaultArmorPenetration>5000</defaultArmorPenetration>
+		<explosionCellFleck>BlastEMP</explosionCellFleck>
+	</DamageDef>
+
+	<DamageDef ParentName="Bomb">
+		<defName>Iconian_BombSmall</defName>
+		<defaultDamage>200</defaultDamage>
+		<soundExplosion>Iconian_Explosion</soundExplosion>
+		<defaultStoppingPower>2.0</defaultStoppingPower>
 		<explosionCellFleck>BlastEMP</explosionCellFleck>
 	</DamageDef>
 
