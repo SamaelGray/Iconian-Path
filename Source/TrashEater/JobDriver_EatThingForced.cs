@@ -1,14 +1,9 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using Verse.AI;
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
+using Verse.AI;
 
-namespace IconianPsycasts
+namespace VPEHerald.TrashEater
 {
     internal class JobDriver_EatThingForced : JobDriver
     {
@@ -33,7 +28,7 @@ namespace IconianPsycasts
 
         CompTrashEater comp => Container.TryGetComp<CompTrashEater>();
 
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOn(delegate

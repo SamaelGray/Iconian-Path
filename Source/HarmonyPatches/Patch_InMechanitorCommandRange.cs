@@ -1,14 +1,9 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using System.Reflection;
+using HarmonyLib;
 using Verse;
+using VPEHerald.TrashEater;
 
-namespace IconianPsycasts.HarmonyPatches
+namespace VPEHerald.HarmonyPatches
 {
     [HarmonyPatch]
     public static class Patch_InMechanitorCommandRange

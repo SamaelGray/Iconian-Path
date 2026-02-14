@@ -8,7 +8,7 @@ using
 using Ability = VEF.Abilities.Ability;
 using System.Linq;
 
-namespace IconianPsycasts;
+namespace HeraldPsycasts;
 public class PortalExtension : AbilityExtension_AbilityMod
 {
     public List<ThingDef> allowedBuildings;

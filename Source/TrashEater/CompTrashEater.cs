@@ -1,17 +1,12 @@
-﻿using RimWorld;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RimWorld;
 using UnityEngine;
-using VanillaPsycastsExpanded;
 using Verse;
 using Verse.AI;
+using VPEHerald.Comp;
 
-namespace IconianPsycasts
+namespace VPEHerald.TrashEater
 {
     [StaticConstructorOnStartup]
     public class CompTrashEater : CompSummonedEntity, ISummonSource
@@ -48,7 +43,7 @@ namespace IconianPsycasts
             }
             if (currentStored < 1)
             {
-                return "IconianNoScrap".Translate();
+                return "HeraldNoScrap".Translate();
             }
             if (cooldownTicksRemaining > 0)
             {
@@ -108,8 +103,8 @@ namespace IconianPsycasts
                 //hotKey = KeyBindingDefOf.Misc2,
                 Disabled = !canSpawn.Accepted,
                 icon = ContentFinder<Texture2D>.Get(Props.gizmoIconSummon),
-                defaultLabel = "IconianSummonPawn".Translate(pawnToSummon.labelPlural),
-                defaultDesc = "IconianSummonPawnDec".Translate(pawnToSummon.labelPlural, Props.thingToEat.label)
+                defaultLabel = "HeraldSummonPawn".Translate(pawnToSummon.labelPlural),
+                defaultDesc = "HeraldSummonPawnDec".Translate(pawnToSummon.labelPlural, Props.thingToEat.label)
             };
 
             if (!canSpawn.Reason.NullOrEmpty())
@@ -149,8 +144,8 @@ namespace IconianPsycasts
 
                 Disabled = currentStored == maxStored, // !canSpawn.Accepted,
                 icon = ContentFinder<Texture2D>.Get(Props.gizmoIconeat),
-                defaultLabel = "Iconian_EatScrap".Translate(),
-                defaultDesc = "Iconian_EatScrapDesc".Translate()
+                defaultLabel = "Herald_EatScrap".Translate(),
+                defaultDesc = "Herald_EatScrapDesc".Translate()
             };
             yield return forceRefill;
 
@@ -185,7 +180,7 @@ namespace IconianPsycasts
 
         private Job EatThingJob(Pawn pawn, Thing thing)
         {
-            Job job = JobMaker.MakeJob(DefOfs.Iconian_EatThingForced, thing, this.parent);
+            Job job = JobMaker.MakeJob(DefOfs.Herald_EatThingForced, thing, this.parent);
             job.count = Mathf.Min(thing.stackCount, AmountToAutofill);
 
             job.haulMode = HaulMode.ToContainer;

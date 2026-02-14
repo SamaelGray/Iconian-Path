@@ -1,22 +1,22 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
     [DefOf]
     public static class DefOfs
     {
-        public static EffecterDef Iconian_TeleportEffect;
-        public static HediffDef Iconian_MovementSpeedBoost;
-        public static HediffDef Iconian_AttackSpeedBoost;
-        public static HediffDef Iconian_MinefieldSlow;
-        public static ThingDef Iconian_Minefield;
-        public static ThingDef Iconian_Turret;
-        public static ThingDef Iconian_ScrapPile;
-        public static JobDef Iconian_EatThingForced;
-        public static JobDef Iconian_EatThing;
-        public static DamageDef Iconian_Flame;
-        public static DamageDef Iconian_BombSmall;
+        public static EffecterDef Herald_TeleportEffect;
+        public static HediffDef Herald_MovementSpeedBoost;
+        public static HediffDef Herald_AttackSpeedBoost;
+        public static HediffDef Herald_MinefieldSlow;
+        public static ThingDef Herald_Minefield;
+        public static ThingDef Herald_Turret;
+        public static ThingDef Herald_ScrapPile;
+        public static JobDef Herald_EatThingForced;
+        public static JobDef Herald_EatThing;
+        public static DamageDef Herald_Flame;
+        public static DamageDef Herald_BombSmall;
     }
     
 }

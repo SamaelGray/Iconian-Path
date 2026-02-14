@@ -1,20 +1,15 @@
 ﻿using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
-using VEF.Abilities;
 using VanillaPsycastsExpanded;
 using VanillaPsycastsExpanded.Staticlord;
+using VEF.Abilities;
+using Verse;
 
-namespace IconianPsycasts
+namespace VPEHerald.Minefield
 {
     [StaticConstructorOnStartup]
     public class Ability_Minefield : Ability, IAbilityToggle, IChannelledPsycast
     {
-        private Iconian_Minefield minefield;
+        private Herald_Minefield minefield;
         public bool IsActive => minefield?.Spawned ?? false;
         public bool Toggle
         {
@@ -34,7 +29,7 @@ namespace IconianPsycasts
                 }
             }
         }
-        public string OffLabel => "Iconian_StopMinefield".Translate();
+        public string OffLabel => "Herald_StopMinefield".Translate();
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
@@ -44,7 +39,7 @@ namespace IconianPsycasts
                 GlobalTargetInfo globalTargetInfo = targets[i];
                 Log.Message("Test1");
 
-                minefield = (Iconian_Minefield)ThingMaker.MakeThing(DefOfs.Iconian_Minefield);
+                minefield = (Herald_Minefield)ThingMaker.MakeThing(DefOfs.Herald_Minefield);
                 minefield.Pawn = pawn;
                 minefield.ability = this;
                 GenSpawn.Spawn(minefield, globalTargetInfo.Cell, globalTargetInfo.Map);

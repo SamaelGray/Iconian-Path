@@ -1,28 +1,18 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using VanillaPsycastsExpanded;
-using VEF.Abilities;
+using RimWorld;
 using Verse;
-using Verse.Noise;
-using Verse.Sound;
-using static HarmonyLib.Code;
 using Ability = VEF.Abilities.Ability;
 
-namespace IconianPsycasts
+namespace VPEHerald.Minefield
 {
-    public class Iconian_Minefield : ThingWithComps
+    public class Herald_Minefield : ThingWithComps
     {
         public Ability ability;
         private List<Faction> affectedFactions;
         public Pawn Pawn;
 
-        protected override void Tick()
+        public override void Tick()
         {
             base.Tick();
             if (!Pawn.psychicEntropy.TryAddEntropy(1f, this) || Pawn.Downed)
@@ -41,7 +31,7 @@ namespace IconianPsycasts
                 {
                     if (item2.IsHashIntervalTick(60))
                     {
-                        DamageInfo dinfo = new DamageInfo(DefOfs.Iconian_Flame, Rand.RangeInclusive(1, 6));
+                        DamageInfo dinfo = new DamageInfo(DefOfs.Herald_Flame, Rand.RangeInclusive(1, 6));
                         item2.TakeDamage(dinfo);
                     }
                     if (Pawn.Faction == Faction.OfPlayer)

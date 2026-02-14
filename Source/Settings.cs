@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
-    public class IconianPsycasts_Settings : ModSettings
+    public class HeraldPsycasts_Settings : ModSettings
     {
         public float ChanceCommon = 0.5f;
         public float ChanceRare = 0.25f;

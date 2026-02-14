@@ -1,17 +1,15 @@
-﻿using RimWorld.Planet;
+﻿using System.Collections.Generic;
 using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RimWorld.Planet;
 using UnityEngine;
-using Verse;
-using VEF.Abilities;
-using Ability = VEF.Abilities.Ability;
 using VanillaPsycastsExpanded;
+using VEF.Abilities;
+using Verse;
+using VPEHerald.Comp;
+using VPEHerald.Sentry;
+using Ability = VEF.Abilities.Ability;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
     public class SummonExtension : AbilityExtension_AbilityMod
     {
@@ -36,7 +34,7 @@ namespace IconianPsycasts
                         sentry.Duration = ability.GetDurationForPawn() / Helper.TurretHealthTimeRatio;
                     }
                     IntVec3 cell = AdjustCell(ability, globalTargetInfo.Cell, thing);
-                    Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(globalTargetInfo.Cell, ability.Caster.Map, new Vector3(0, 3, 0));
+                    Effecter portalEffecter = DefOfs.Herald_TeleportEffect.Spawn(globalTargetInfo.Cell, ability.Caster.Map, new Vector3(0, 3, 0));
                     ability.AddEffecterToMaintain(portalEffecter, globalTargetInfo.Cell, 180, ability.Caster.Map);
                     TeleportThing(ability, cell, thing);
                 }
@@ -48,7 +46,7 @@ namespace IconianPsycasts
                         thing.TryGetComp<CompBreakLink>().Pawn = ability.pawn;
                     }
                     IntVec3 cell = AdjustCell(ability, globalTargetInfo.Cell, thing);
-                    Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(globalTargetInfo.Cell, ability.Caster.Map, new Vector3(0, 3, 0));
+                    Effecter portalEffecter = DefOfs.Herald_TeleportEffect.Spawn(globalTargetInfo.Cell, ability.Caster.Map, new Vector3(0, 3, 0));
                     ability.AddEffecterToMaintain(portalEffecter, globalTargetInfo.Cell, 180, ability.Caster.Map);
                     TeleportThing(ability, cell, thing);
                 }

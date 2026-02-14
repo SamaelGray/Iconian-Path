@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VanillaPsycastsExpanded;
-using Verse;
+﻿using Verse;
 using Verse.AI.Group;
+using VPEHerald.Comp;
 
-namespace IconianPsycasts
+namespace VPEHerald.PortalSpawner
 {
     public class DeathActionWorker_Scrap : DeathActionWorker
     {
@@ -15,7 +10,7 @@ namespace IconianPsycasts
         {
             if (corpse.Map != null)
             {
-                Thing newThing = ThingMaker.MakeThing(DefOfs.Iconian_ScrapPile);
+                Thing newThing = ThingMaker.MakeThing(DefOfs.Herald_ScrapPile);
                 GenSpawn.Spawn(newThing, corpse.Position, corpse.Map);
                 corpse.Destroy();
                 CompSummonedEntity comp = corpse.InnerPawn.TryGetComp<CompSummonedEntity>();

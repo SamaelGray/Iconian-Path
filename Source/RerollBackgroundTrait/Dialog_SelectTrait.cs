@@ -1,16 +1,9 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
-using VEF.Abilities;
 
-namespace IconianPsycasts
+namespace VPEHerald.RerollBackgroundTrait
 {
     public class Dialog_SelectTrait : Window
     {

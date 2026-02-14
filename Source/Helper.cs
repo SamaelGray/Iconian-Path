@@ -1,16 +1,13 @@
-﻿using RimWorld;
-using RimWorld.Planet;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
-using static UnityEngine.GraphicsBuffer;
+using VPEHerald.RerollBackgroundTrait;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
     public static class Helper
     {
@@ -99,7 +96,7 @@ namespace IconianPsycasts
             {
                 return new float[] { 0f, 0f, 0f, 1f };
             }
-            float[] result = new float[] { IconianPsycasts_Mod.settings.ChanceCommon, IconianPsycasts_Mod.settings.ChanceRare, IconianPsycasts_Mod.settings.ChanceEpic, IconianPsycasts_Mod.settings.ChanceLegendary };
+            float[] result = new float[] { HeraldPsycasts_Mod.settings.ChanceCommon, HeraldPsycasts_Mod.settings.ChanceRare, HeraldPsycasts_Mod.settings.ChanceEpic, HeraldPsycasts_Mod.settings.ChanceLegendary };
             if (psychicSensitivity == 1f)
             {
                 return result;
@@ -291,17 +288,17 @@ namespace IconianPsycasts
 
         public static void ApplySpeedHediff(Pawn pawn, float psychicSensitivity)
         {
-            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Iconian_MovementSpeedBoost, pawn);
+            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Herald_MovementSpeedBoost, pawn);
             HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>();
-            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, IconianPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
+            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, HeraldPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
             hediff.Severity *= psychicSensitivity;
             pawn.health.AddHediff(hediff);
         }
         public static void ApplyAttackSpeedHediff(Pawn pawn, float psychicSensitivity)
         {
-            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Iconian_AttackSpeedBoost, pawn);
+            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Herald_AttackSpeedBoost, pawn);
             HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>();
-            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, IconianPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
+            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, HeraldPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
             hediff.Severity *= psychicSensitivity;
             pawn.health.AddHediff(hediff);
         }

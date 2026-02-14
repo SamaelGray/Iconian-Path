@@ -1,12 +1,7 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
-namespace IconianPsycasts
+namespace VPEHerald.TrashEater
 {
     public class CompAbilityEffect_ExplodeLeap : CompAbilityEffect, ICompAbilityEffectOnJumpCompleted
     {

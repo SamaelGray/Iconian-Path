@@ -1,20 +1,10 @@
-﻿using RimWorld.Planet;
-using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
-using static RimWorld.PsychicRitualRoleDef;
-using System.Security.Cryptography;
-using VanillaPsycastsExpanded;
-using static UnityEngine.GraphicsBuffer;
-using Verse.Noise;
+using VPEHerald.Comp;
 
-namespace IconianPsycasts
+namespace VPEHerald.Sentry
 {
     [StaticConstructorOnStartup]
     public class Command_Teleport : Command
@@ -75,7 +65,7 @@ namespace IconianPsycasts
             return new GizmoResult(result.State);
         }
 
-        protected override GizmoResult GizmoOnGUIInt(Rect butRect, GizmoRenderParms parms)
+        public override GizmoResult GizmoOnGUIInt(Rect butRect, GizmoRenderParms parms)
         {
             if (Mouse.IsOver(butRect))
             {
@@ -107,7 +97,7 @@ namespace IconianPsycasts
             Find.DesignatorManager.Deselect();
             Find.Targeter.BeginTargeting(TargetingParameters.ForDropPodsDestination(), delegate (LocalTargetInfo target)
             {
-                Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(turret.PositionHeld, turret.MapHeld, new Vector3(0, 3, 0));
+                Effecter portalEffecter = DefOfs.Herald_TeleportEffect.Spawn(turret.PositionHeld, turret.MapHeld, new Vector3(0, 3, 0));
                 Building_TurretSentry thing = (Building_TurretSentry)ThingMaker.MakeThing(turret.def);
                 thing.HitPoints = turret.HitPoints - 1250 / Helper.TurretHealthTimeRatio;
                 thing.Duration = turret.Duration;
@@ -115,7 +105,7 @@ namespace IconianPsycasts
                 thing.teleportCooldownTicksTotal = turret.teleportCooldownTicksTotal;
                 thing.teleportCooldownTicksRemaining = thing.teleportCooldownTicksTotal;
                 GenSpawn.Spawn(thing, target.Cell, turret.MapHeld);
-                Effecter portalEffecterTarget = DefOfs.Iconian_TeleportEffect.Spawn(target.Cell, turret.MapHeld, new Vector3(0, 3, 0));
+                Effecter portalEffecterTarget = DefOfs.Herald_TeleportEffect.Spawn(target.Cell, turret.MapHeld, new Vector3(0, 3, 0));
 
                 turret.Destroy(DestroyMode.Vanish);
             },

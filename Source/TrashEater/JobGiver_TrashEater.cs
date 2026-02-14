@@ -1,18 +1,13 @@
 ﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace IconianPsycasts
+namespace VPEHerald.TrashEater
 {
     public class JobGiver_TrashEater : ThinkNode_JobGiver
     {
-        protected override Job TryGiveJob(Pawn pawn)
+        public override Job TryGiveJob(Pawn pawn)
         {
             CompTrashEater comp = pawn.TryGetComp<CompTrashEater>(); 
             if(comp == null)
@@ -26,7 +21,7 @@ namespace IconianPsycasts
             Thing thingToEat = GetThingToEat(pawn, comp);
             if (thingToEat != null)
             {
-                Job job = JobMaker.MakeJob(DefOfs.Iconian_EatThing, thingToEat);
+                Job job = JobMaker.MakeJob(DefOfs.Herald_EatThing, thingToEat);
                 job.count = Mathf.Min(thingToEat.stackCount, comp.AmountToAutofill);
                 return job;
             }

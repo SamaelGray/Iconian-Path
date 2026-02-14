@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using VanillaPsycastsExpanded;
 using Verse;
-using static UnityEngine.GraphicsBuffer;
+using VPEHerald.Comp;
 
-namespace IconianPsycasts
+namespace VPEHerald.PortalSpawner
 {
     public class Building_PortalSpawner : Building, IMinHeatGiver, ISummonSource
     {
@@ -21,7 +18,7 @@ namespace IconianPsycasts
         private int spawnedpawnsCount => SummonListForReading.Count();
 
 
-        protected override void Tick()
+        public override void Tick()
         {
             base.Tick();
             if (this.IsHashIntervalTick(SpawnerExtension.spawnInterval) && spawnedpawnsCount < SpawnerExtension.maxSpawns)
@@ -35,7 +32,7 @@ namespace IconianPsycasts
             Pawn mob = PawnGenerator.GeneratePawn(SpawnerExtension.pawnKindToSpawn, Faction);
             GenSpawn.Spawn(mob, Position, MapHeld);
             AddSummon(mob);
-            Effecter portalEffecterTarget = DefOfs.Iconian_TeleportEffect.Spawn(Position, MapHeld, new Vector3(0, 3, 0));
+            Effecter portalEffecterTarget = DefOfs.Herald_TeleportEffect.Spawn(Position, MapHeld, new Vector3(0, 3, 0));
         }
 
         public void AddSummon(Thing thing)

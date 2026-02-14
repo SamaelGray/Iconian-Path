@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HarmonyLib;
 using Verse;
-using HarmonyLib;
-namespace IconianPsycasts.HarmonyPatches
+
+namespace VPEHerald.HarmonyPatches
 {
     [StaticConstructorOnStartup]
     public static class HarmonyStarter
     {
         static HarmonyStarter()
         {
-            Harmony harmony = new Harmony("Nalzurin.IconianPsycasts");
+            Harmony harmony = new Harmony("Nalzurin.HeraldPsycasts");
             harmony.PatchAll();
         }
     }

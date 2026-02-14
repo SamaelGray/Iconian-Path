@@ -1,17 +1,11 @@
-﻿using RimWorld;
-using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
+using RimWorld;
 using UnityEngine;
-using VEF.Abilities;
 using Verse;
-using static HarmonyLib.Code;
+using VPEHerald.Comp;
 
-namespace IconianPsycasts
+namespace VPEHerald.Sentry
 {
     public class Building_TurretSentry : Building_TurretGunSummoned
     {
@@ -19,7 +13,7 @@ namespace IconianPsycasts
         public CompExplosive compExplosive => this.TryGetComp<CompExplosive>();
         public override int MinHeat => 25;
         public int Duration = 90000;
-        private int halfHour = 1250;
+        public int halfHour = 1250;
         public int teleportCooldownTicksTotal = 1250;
         public int teleportCooldownTicksRemaining = 0;
 
@@ -31,7 +25,8 @@ namespace IconianPsycasts
             Scribe_Values.Look(ref teleportCooldownTicksRemaining, "teleportCooldownTicksRemaining");
             
         }
-        protected override void Tick()
+
+        public override void Tick()
         {
             base.Tick();
             if (this.HitPoints == 0)
@@ -51,8 +46,8 @@ namespace IconianPsycasts
         public override string GetInspectString()
         {
             StringBuilder sb = new StringBuilder(base.GetInspectString());
-            sb.AppendLine("IconianSentryOwner".Translate(compBreakLink.Pawn.LabelCap));
-            sb.Append("IconianSentryTimeLeft".Translate((HitPoints * Helper.TurretHealthTimeRatio).ToStringTicksToPeriod()));
+            sb.AppendLine("HeraldSentryOwner".Translate(compBreakLink.Pawn.LabelCap));
+            sb.Append("HeraldSentryTimeLeft".Translate((HitPoints * Helper.TurretHealthTimeRatio).ToStringTicksToPeriod()));
             return sb.ToString();
         }
         public override IEnumerable<Gizmo> GetGizmos()
@@ -63,8 +58,8 @@ namespace IconianPsycasts
             }
             yield return new Command_Action
             {
-                defaultLabel = "IconianSentryExplode".Translate(),
-                defaultDesc = "IconianSentryExplodeDesc".Translate(),
+                defaultLabel = "HeraldSentryExplode".Translate(),
+                defaultDesc = "HeraldSentryExplodeDesc".Translate(),
                 icon = ContentFinder<Texture2D>.Get("Buildings/AlienLaserTurret_Top"),
                 action = delegate
                 {
@@ -79,8 +74,8 @@ namespace IconianPsycasts
             };
             yield return new Command_Teleport
             {
-                defaultLabel = "IconianSentryTeleport".Translate(),
-                defaultDesc = "IconianSentryTeleportDesc".Translate(),
+                defaultLabel = "HeraldSentryTeleport".Translate(),
+                defaultDesc = "HeraldSentryTeleportDesc".Translate(),
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack"),
                 turret = this,
                 range = 54.9f

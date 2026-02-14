@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
-    public class IconianPsycasts_Mod : Mod
+    public class HeraldPsycasts_Mod : Mod
     {
-        public static IconianPsycasts_Settings settings;
-        public IconianPsycasts_Mod(ModContentPack content) : base(content)
+        public static HeraldPsycasts_Settings settings;
+        public HeraldPsycasts_Mod(ModContentPack content) : base(content)
         {
-            settings = GetSettings<IconianPsycasts_Settings>();
+            settings = GetSettings<HeraldPsycasts_Settings>();
         }
         public override string SettingsCategory()
         {
-            return "Iconian Psycasts";
+            return "Herald Psycasts";
         }
         public override void DoSettingsWindowContents(Rect inRect)
         {

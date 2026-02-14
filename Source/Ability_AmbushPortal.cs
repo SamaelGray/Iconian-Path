@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static RimWorld.EffecterMaintainer;
-using Verse;
-using Ability = VEF.Abilities.Ability;
-using RimWorld.Planet;
+﻿using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
+using Verse;
 using Verse.Sound;
+using Ability = VEF.Abilities.Ability;
 
-namespace IconianPsycasts
+namespace VPEHerald
 {
     public class Ability_AmbushPortal : Ability
     {
@@ -27,9 +22,9 @@ namespace IconianPsycasts
             Pawn target = targets[0].Pawn;
             IntVec3 cellToTeleport = Helper.GetCellToAmbushTeleport(this, target);
 
-            Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(cellToTeleport, pawn.Map, new Vector3(0, 3, 0));
+            Effecter portalEffecter = DefOfs.Herald_TeleportEffect.Spawn(cellToTeleport, pawn.Map, new Vector3(0, 3, 0));
             AddEffecterToMaintain(portalEffecter, cellToTeleport, 180, pawn.Map);
-            Effecter portalEffecter2 = DefOfs.Iconian_TeleportEffect.Spawn(pawn.Position, pawn.Map, new Vector3(0, 3, 0));
+            Effecter portalEffecter2 = DefOfs.Herald_TeleportEffect.Spawn(pawn.Position, pawn.Map, new Vector3(0, 3, 0));
             AddEffecterToMaintain(portalEffecter2, pawn.Position, 180, pawn.Map);
             SoundDefOf.Psycast_Skip_Entry.PlayOneShot(pawn);
             SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(target.Position, target.Map));
