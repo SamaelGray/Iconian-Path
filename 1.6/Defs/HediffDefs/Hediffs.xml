@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
 	<HediffDef>
 		<defName>Iconian_MovementSpeedBoost</defName>
 		<label>movement speed boost</label>
@@ -23,6 +24,7 @@
 			</li>
 		</comps>
 	</HediffDef>
+
 	<HediffDef>
 		<defName>Iconian_AttackSpeedBoost</defName>
 		<label>attack speed boost</label>
@@ -171,4 +173,5 @@
 			</li>
 		</comps>
 	</HediffDef>
+
 </Defs>

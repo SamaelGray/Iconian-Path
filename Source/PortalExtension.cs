@@ -28,9 +28,9 @@ public class PortalExtension : AbilityExtension_AbilityMod
 
         if (teleportCaster)
         {
-            Effecter portalEffecter = DefOfs.AAD_TeleportEffect.Spawn(cellToTeleport, ability.pawn.Map, new Vector3(0, 3, 0));
+            Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(cellToTeleport, ability.pawn.Map, new Vector3(0, 3, 0));
             ability.AddEffecterToMaintain(portalEffecter, cellToTeleport, 180, ability.pawn.Map);
-            Effecter portalEffecter2 = DefOfs.AAD_TeleportEffect.Spawn(ability.pawn.Position, ability.pawn.Map, new Vector3(0, 3, 0));
+            Effecter portalEffecter2 = DefOfs.Iconian_TeleportEffect.Spawn(ability.pawn.Position, ability.pawn.Map, new Vector3(0, 3, 0));
             ability.AddEffecterToMaintain(portalEffecter2, ability.pawn.Position, 180, ability.pawn.Map);
             foreach (SubEffecter_Sprayer sub in portalEffecter2.children.OfType<SubEffecter_Sprayer>())
             {
@@ -69,7 +69,7 @@ public class PortalExtension : AbilityExtension_AbilityMod
     {
         cell = AdjustCell(ability, cell, thing);
         TeleportThing(ability, cell, thing);
-        Effecter portalEffecter = DefOfs.AAD_TeleportEffect.Spawn(cell, ability.pawn.Map, new Vector3(0, 3, 0));
+        Effecter portalEffecter = DefOfs.Iconian_TeleportEffect.Spawn(cell, ability.pawn.Map, new Vector3(0, 3, 0));
         ability.AddEffecterToMaintain(portalEffecter, cell, 180, ability.pawn.Map);
     }
 
@@ -88,7 +88,7 @@ public class PortalExtension : AbilityExtension_AbilityMod
 
         if (thing is Pawn pawn && durationTicks > 0)
         {
-            Hediff hediff = pawn.health.AddHediff(DefOfs.AAD_MechControllable);
+            Hediff hediff = pawn.health.AddHediff(DefOfs.Iconian_MechControllable);
             hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = durationTicks;
             PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn);
         }

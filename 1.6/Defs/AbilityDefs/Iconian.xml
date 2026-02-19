@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
 	<!--Mental Abilities-->
 	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Iconian_RerollAdultBackgroundCivillian</defName>
@@ -27,7 +28,7 @@
 				<psyfocusCost>0.90</psyfocusCost>
 				<entropyGain>0</entropyGain>
 				<prerequisites>
-				<li>Iconian_AmbushPortal</li>
+					<li>Iconian_AmbushPortal</li>
 				</prerequisites>
 			</li>
 			<li Class="IconianPsycasts.RerollExtension">
@@ -76,6 +77,7 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>Iconian_RerollAdultBackgroundMilitary</defName>
 		<label>reroll military</label>
@@ -207,6 +209,7 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 	<VEF.Abilities.AbilityDef>
 		<defName>Iconian_SummonMine</defName>
 		<label>Summon Mine</label>
@@ -233,6 +236,7 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 	<VEF.Abilities.AbilityDef>
 		<defName>Iconian_SummonTurret</defName>
 		<label>Summon Turret</label>
@@ -263,6 +267,7 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 	<VEF.Abilities.AbilityDef>
 		<defName>Iconian_SummonTrashSpawner</defName>
 		<label>Summon Trash Spawner</label>
@@ -289,6 +294,7 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 	<VEF.Abilities.AbilityDef>
 		<defName>Iconian_SummonTrashEater</defName>
 		<label>Summon Trash Eater</label>
@@ -315,4 +321,5 @@
 			</li>
 		</modExtensions>
 	</VEF.Abilities.AbilityDef>
+
 </Defs>

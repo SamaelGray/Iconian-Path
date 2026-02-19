@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="SafePatcher.PatchOperationSetModExtension">
+		<xpath>Defs/ThingDef[defName="Iconian_Gun_Mace"]</xpath>
+		<value>
+			<li Class="MuzzleFlash.MuzzleFlashProps">
+				<def>Iconian_HeraldMF4x5</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(0.05,0)</li>
+				</offsets>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="SafePatcher.PatchOperationSetModExtension">
+		<xpath>Defs/ThingDef[defName="Iconian_Gun_AR"]</xpath>
+		<value>
+			<li Class="MuzzleFlash.MuzzleFlashProps">
+				<def>Iconian_HeraldMF4x5</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(-0.31,0)</li>
+				</offsets>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="SafePatcher.PatchOperationSetModExtension">
+		<xpath>Defs/ThingDef[defName="Iconian_Gun_BR"]</xpath>
+		<value>
+			<li Class="MuzzleFlash.MuzzleFlashProps">
+				<def>Iconian_HeraldMF4x5</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(-0.31,0)</li>
+				</offsets>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="SafePatcher.PatchOperationSetModExtension">
+		<xpath>Defs/ThingDef[defName="Iconian_Gun_AMR"]</xpath>
+		<value>
+			<li Class="MuzzleFlash.MuzzleFlashProps">
+				<def>Iconian_HeraldMF4x5</def>
+				<drawSize>(1.5,1.5)</drawSize>
+				<offsets>
+					<li>(0.06,0)</li>
+				</offsets>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

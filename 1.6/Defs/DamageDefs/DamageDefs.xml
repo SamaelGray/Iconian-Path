@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
 	<DamageDef ParentName="Bomb">
 		<defName>Iconian_BombSuper</defName>
 		<defaultDamage>1100</defaultDamage>
@@ -32,4 +33,5 @@
 		<defaultArmorPenetration>2</defaultArmorPenetration>
 		<explosionCellFleck>BlastEMP</explosionCellFleck>
 	</DamageDef>
+
 </Defs>

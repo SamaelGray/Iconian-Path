@@ -113,57 +113,58 @@
 	</ThingDef>
 
 	<EffecterDef>
-        <defName>Iconian_MiniTorpedo</defName>
-        <children>
-            <li>
-                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <moteDef>Iconian_MiniTorpedoExplosion</moteDef>
-                <scale>12</scale>
-                <burstCount>1</burstCount>
-                <spawnLocType>OnSource</spawnLocType>
-                <attachToSpawnThing>true</attachToSpawnThing>
-            </li>
-            <li>
-                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <moteDef>Iconian_MiniTorpedoExplosionDots</moteDef>
-                <scale>14.5</scale>
-                <color>(1, 1, 1, 0.5)</color>
-                <burstCount>1</burstCount>
-                <spawnLocType>OnSource</spawnLocType>
-                <attachToSpawnThing>true</attachToSpawnThing>
-            </li>
-        </children>
-    </EffecterDef>
+		<defName>Iconian_MiniTorpedo</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>Iconian_MiniTorpedoExplosion</moteDef>
+				<scale>12</scale>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<moteDef>Iconian_MiniTorpedoExplosionDots</moteDef>
+				<scale>14.5</scale>
+				<color>(1, 1, 1, 0.5)</color>
+				<burstCount>1</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>
+		</children>
+	</EffecterDef>
 
-    <ThingDef ParentName="MoteBase">
-        <defName>Iconian_MiniTorpedoExplosion</defName>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <thingClass>MoteAttached</thingClass>
-        <mote>
-            <fadeInTime>0.06</fadeInTime>
-            <solidTime>0.08</solidTime>
-            <fadeOutTime>0.2</fadeOutTime>
-            <growthRate>5</growthRate>
-        </mote>
-        <graphicData>
-            <texPath>Things/Motes/Explosion</texPath>
-            <shaderType>TransparentPostLight</shaderType>
-        </graphicData>
-    </ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>Iconian_MiniTorpedoExplosion</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<thingClass>MoteAttached</thingClass>
+		<mote>
+			<fadeInTime>0.06</fadeInTime>
+			<solidTime>0.08</solidTime>
+			<fadeOutTime>0.2</fadeOutTime>
+			<growthRate>5</growthRate>
+		</mote>
+		<graphicData>
+			<texPath>Things/Motes/Explosion</texPath>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+	</ThingDef>
 
-    <ThingDef ParentName="MoteBase">
-        <defName>Iconian_MiniTorpedoExplosionDots</defName>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <thingClass>MoteAttached</thingClass>
-        <mote>
-            <fadeInTime>0.04</fadeInTime>
-            <solidTime>0.08</solidTime>
-            <fadeOutTime>0.4</fadeOutTime>
-            <growthRate>9</growthRate>
-        </mote>
-        <graphicData>
-            <texPath>Things/Motes/Explosion_Dots</texPath>
-            <shaderType>MoteGlow</shaderType>
-        </graphicData>
-    </ThingDef>
+	<ThingDef ParentName="MoteBase">
+		<defName>Iconian_MiniTorpedoExplosionDots</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<thingClass>MoteAttached</thingClass>
+		<mote>
+			<fadeInTime>0.04</fadeInTime>
+			<solidTime>0.08</solidTime>
+			<fadeOutTime>0.4</fadeOutTime>
+			<growthRate>9</growthRate>
+		</mote>
+		<graphicData>
+			<texPath>Things/Motes/Explosion_Dots</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+
 </Defs>

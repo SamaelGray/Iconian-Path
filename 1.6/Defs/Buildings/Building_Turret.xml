@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
 	<!-- Mine/Turret -->
 	<ThingDef ParentName="BuildingBase">
 		<defName>Iconian_TurretMine</defName>
@@ -132,7 +133,6 @@
 		</projectile>
 	</ThingDef>
 
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>Iconian_Turret</defName>
 		<label>turret</label>
@@ -193,7 +193,6 @@
 				<startWickHitPointsPercent>0</startWickHitPointsPercent>
 			</li>
 		</comps>
-
 	</ThingDef>
 
 	<ThingDef ParentName="Gun_ChargeBlasterHeavyBase">
@@ -227,8 +226,6 @@
 				<muzzleFlashScale>18</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 			</li>
-
-
 		</verbs>
 	</ThingDef>
 
